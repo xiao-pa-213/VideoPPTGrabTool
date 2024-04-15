@@ -1,5 +1,4 @@
 # created by virtualenv automatically
 /Scripts/
 /Lib/
-/data/1_raw_video/**
-
+/data/
