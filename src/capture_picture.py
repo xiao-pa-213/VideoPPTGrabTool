@@ -3,6 +3,9 @@ from config import *
 from process import *
 from tools import *
 
+
+
+
 def main():
     if(1):
         check_path(raw_video_file)
