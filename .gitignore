@@ -1,4 +1,9 @@
 # created by virtualenv automatically
 /Scripts/
 /Lib/
-
+/data/raw_video/*.mp4
+/data/output_picture/*.png
+/data/output_picture/crashbin_auto/*.png
+/data/output_picture/crashbin_manual/*.png
+/data/output_pdf/*.pdf
+/data/output_ppt/*.pptx
