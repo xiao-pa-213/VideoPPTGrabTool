@@ -11,6 +11,7 @@ def check_all_paths():
     check_path(output_ppt_path)
     check_path(template_path)
     check_path(pictemp_path)
+    print("Check finished")
 
 def main():
     check_all_paths()
