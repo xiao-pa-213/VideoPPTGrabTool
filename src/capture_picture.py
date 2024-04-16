@@ -8,6 +8,7 @@ def check_read_video_frames():
     if not read_video_frames(raw_video_path, n_seconds=garb_interval_n_seconds,
                              local_save=True, save_path=pictemp_path):  # 读取视频
         return 0
+    return 1
 def check_pick_stable_frames():
     clean_images_in_path(os.path.join(output_picture_path, "crashbin_manual"))  # 清空临时回收站
     clean_images_in_path(os.path.join(output_picture_path, "crashbin_auto"))  # 清空临时回收站
