@@ -1,4 +1,4 @@
-import os, cv2
+import os, cv2, re
 import fnmatch
 import numpy as np
 from config import *
@@ -60,9 +60,13 @@ def is_almost_white_black_color(image):
 def check_template(current_image, template_folder, threshold=0.8):
     templates = []
 
+    # 读取所有模板图片的路径并排序
+    tempimage_paths = [os.path.join(template_folder, f) for f in os.listdir(template_folder) if f.endswith('.png')]
+    tempimage_paths.sort(
+        key=lambda x: int(re.search(r'template(\d+)', x).group(1)) if re.search(r'template(\d+)', x) else 0)
+
     # 读取模板库中的所有模板
-    for filename in os.listdir(template_folder):
-        template_path = os.path.join(template_folder, filename)
+    for template_path in tempimage_paths:
         template = cv2.imread(template_path)
         template_gray = cv2.cvtColor(template,cv2.COLOR_BGR2GRAY)
         templates.append(template_gray)

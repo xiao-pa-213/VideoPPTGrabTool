@@ -37,35 +37,6 @@ def read_video_frames(video_path, n_seconds, local_save = False, save_path = '')
     video.release()
     return 1
 
-#删除相邻的相似帧
-def remove_similar_neibor_frames(threshold=0.9, read_path=''):
-    #读取所有路径并排序
-    image_paths = [os.path.join(read_path, f) for f in os.listdir(read_path) if f.endswith('.png')]
-    image_paths.sort(
-        key=lambda x: int(re.search(r'frame_(\d+)', x).group(1)) if re.search(r'frame_(\d+)', x) else 0)
-
-    #比较算法
-    unique_frames.append(cv2.imread(image_paths[0]))
-
-    index = 0
-    timestamp = re.search(r"_([0-9]{2}-[0-9]{2}-[0-9]{2})\.", unique_frames[-1]).group(1)
-    file_name = f'frame_{index}_{timestamp}.png'
-    file_path = os.path.join(output_picture_path, file_name)
-    cv2.imwrite(file_path, unique_frames[-1])
-
-    for path in tqdm(image_paths,desc="正在删除相邻相似帧",unit_scale=False):
-        img = cv2.imread(path)
-        if not is_similar_ssim(img, unique_frames[-1],threshold=0.9):
-            unique_frames.append(img)
-
-            index+=1
-            timestamp = re.search(r"_([0-9]{2}-[0-9]{2}-[0-9]{2})\.", path).group(1)
-            file_name = f'frame_{index}_{timestamp}.png'
-            file_path = os.path.join(output_picture_path, file_name)
-            cv2.imwrite(file_path, img)
-
-    return 1
-
 #提取所有连续子串
 def pick_stable_frames(threshold=0.9,read_path='', SimilarCount=2):
     #SimilarCount    会被识别为重复子串的最小长度
@@ -164,7 +135,7 @@ def remove_repeat_frames(read_path=''):
         j = i+1
         while j < len(image_paths):
             img2 = images[j]
-            if is_similar_ncc(img1,img2,threshold=0.9):
+            if is_similar_ssim(img1,img2,threshold=0.9):
                 #移除img2
                 source_image_path = image_paths[j]
                 destination_folder_path = os.path.join(output_picture_path, "crashbin_auto")
