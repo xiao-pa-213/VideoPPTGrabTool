@@ -23,7 +23,7 @@ def remove_frames():
 def main():
     #提取视频帧
     flg = check_read_video_frames()
-    if not flg():
+    if not flg:
         return 0
 
     #提取主要帧
