@@ -23,12 +23,12 @@ def remove_frames():
 
 def main():
     #提取视频帧
-    # flg = check_read_video_frames()
-    # if not flg:
-    #     return 0
+    flg = check_read_video_frames()
+    if not flg:
+        return 0
 
-    # #提取主要帧
-    # check_pick_stable_frames()
+    #提取主要帧
+    check_pick_stable_frames()
 
     #自动去除不需要的帧
     remove_frames()
