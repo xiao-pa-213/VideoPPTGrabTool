@@ -16,7 +16,17 @@
 ```shell
     python src/check_paths.py
 ```
-
+```shell
+data
+├───output_pdf
+├───output_picture
+│   ├───crashbin_auto
+│   └───crashbin_manual
+├───output_ppt
+├───pic_temp
+├───raw_video
+└───template
+```
 3. 将要处理的视频文件放入data/1_raw_video/ ，若路径不存在可参考上一步或手动创建
 
 4. 打开src/config.py ，修改相关参数  
