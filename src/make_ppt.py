@@ -3,6 +3,7 @@ from pptx.util import Inches,Cm
 from config import *
 from pptx import Presentation
 from tqdm import tqdm
+from tools import clean_images_in_path
 
 def main():
     # 读取所有路径并排序
