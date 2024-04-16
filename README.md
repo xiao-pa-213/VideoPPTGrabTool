@@ -40,4 +40,4 @@
 
 ## 参考
 [1] 【视频提取PPT软件】微光萌生 Gleamoe Peanut 2023 https://zhuanlan.zhihu.com/p/619717101  
-[2] B站 用Python从视频里面扒PPT？【用Python从视频里面扒PPT？】 https://www.bilibili.com/video/BV1RN4y1y7Kk/
+[2] B站 【用Python从视频里面扒PPT？】 https://www.bilibili.com/video/BV1RN4y1y7Kk/
