@@ -54,6 +54,7 @@ def main():
     print("生成ppt完成!")
     # 保存PPT文件
     prs.save(os.path.join(output_ppt_path,'output_ppt.pptx'))
+    clean_images_in_path(pictemp_path)  # 清空pictemp文件夹
 
 if __name__ == "__main__":
     main()

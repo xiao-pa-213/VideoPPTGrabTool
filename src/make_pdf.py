@@ -37,6 +37,7 @@ def main():
     progressbar.close()
     print("生成pdf完成!")
     c.save()
+    clean_images_in_path(pictemp_path)  # 清空pictemp文件夹
 
 if __name__ == "__main__":
     main()
