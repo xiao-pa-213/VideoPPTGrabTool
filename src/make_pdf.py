@@ -4,6 +4,7 @@ from reportlab.lib.pagesizes import letter
 from reportlab.pdfgen import canvas
 from config import *
 from tqdm import tqdm
+from tools import clean_images_in_path
 
 def main():
     # 读取所有路径并排序

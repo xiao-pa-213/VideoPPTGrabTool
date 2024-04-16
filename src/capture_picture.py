@@ -20,7 +20,6 @@ def remove_frames():
     remove_useless_frames(read_path=output_picture_path)
     remove_repeat_frames(read_path=output_picture_path)#此操作比较耗时,time = items_count ^ 2
 
-
 def main():
     #提取视频帧
     flg = check_read_video_frames()
