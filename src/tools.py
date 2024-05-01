@@ -24,7 +24,23 @@ def clean_images_in_path(path):
             file_path = os.path.join(path, filename)
             # 在这里执行你想要的操作
             os.remove(file_path)
-    print(f"已清空路径 {path} 下的图片")
+    print(f"已清空路径 {path} 下的图片")#清理文件夹内的png
+
+# 清理文件夹内的指定格式文件
+def clean_file_in_path(path, file_pattern='*.png'):
+    imgset = []
+
+    #找不到路径时创建路径
+    check_path(path)
+
+    for filename in os.listdir(path):
+        # 使用fnmatch.fnmatch()函数检查文件名是否与给定的模式匹配
+        if fnmatch.fnmatch(filename, file_pattern):
+            # 如果文件名匹配，打开文件并执行所需操作
+            file_path = os.path.join(path, filename)
+            # 在这里执行你想要的操作
+            os.remove(file_path)
+    print(f"已清空路径 {path} 下的{file_pattern}")
 
 #保存png到文件夹
 def save_images2path(images, folder_path):
