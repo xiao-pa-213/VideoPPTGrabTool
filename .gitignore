@@ -1,5 +1,4 @@
 # created by virtualenv automatically
-/Scripts/
 /Lib/
 /data/raw_video/*.mp4
 /data/output_picture/*.png
